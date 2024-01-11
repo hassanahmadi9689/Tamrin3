@@ -34,9 +34,9 @@ void run()
         }
         case 2:
         {
-            var employeeId = GetNumberFromUser("enter ID");
-            var salary = GetNumberFromUser("enter salary");
-            var department = GetValidStringFromUser("enter department");
+            var employeeId = GetNumberFromUser("enter ID :");
+            var salary = GetNumberFromUser("enter salary :");
+            var department = GetValidStringFromUser("enter department :");
             Management.AddManager(employeeId,salary,department);
             break;
         }
