@@ -3,8 +3,21 @@
 
 using ConsoleApp79;
 
-var exit = false;
-while (!exit)
+while (true)
+{
+    try
+    {
+        run();
+
+    }
+    catch (Exception exception)
+    {
+        ShowError(exception.Message);
+    }  
+    
+}
+
+void run()
 {
     var Option = GetNumberFromUser("choose option:\n" +
                                    "1.Add employee\n" +
@@ -42,6 +55,7 @@ while (!exit)
 
 
 
+
 static int GetNumberFromUser(string message)
 {
     var resultTryParseFirstNumber = false;
@@ -67,4 +81,10 @@ static string GetValidStringFromUser(string message)
     } while ( string.IsNullOrWhiteSpace(value)   );
  
     return value;
+}
+static void ShowError(string error)
+{
+    Console.WriteLine("*********");
+    Console.WriteLine(error);
+    Console.WriteLine("*********");
 }
